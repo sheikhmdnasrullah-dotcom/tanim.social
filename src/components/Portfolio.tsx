@@ -25,40 +25,49 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-24 bg-white">
-      <div className="text-center mb-12">
-        <h2 className="font-inter-tight font-extrabold text-4xl md:text-5xl text-black">Portfolio</h2>
-        <p className="text-gray-600 mt-4 text-lg">Examples of my work in action</p>
-      </div>
+    <section id="work" className="section border-t border-[var(--color-border)]">
+      <div className="container-page">
+        <div className="max-w-2xl mb-12">
+          <span className="eyebrow">Selected Work</span>
+          <h2 className="h2 mb-4">Proof, not promises</h2>
+          <p className="body-lg">A sample of the content production system in action.</p>
+        </div>
 
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="flex justify-center gap-4 mb-12">
+        <div className="flex gap-8 mb-12 border-b border-[var(--color-border)]">
           <button
             onClick={() => setActiveTab("podcast")}
-            className={`px-8 py-3 rounded-full font-semibold transition-colors ${
-              activeTab === "podcast"
-                ? "bg-[var(--color-primary)] text-white shadow-md"
-                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+            className={`relative pb-4 text-sm font-medium transition-colors ${
+              activeTab === "podcast" ? "text-black" : "text-black/40 hover:text-black"
             }`}
           >
             Podcast Edits
+            <span
+              className={`absolute left-0 right-0 -bottom-[1px] h-[2px] transition-opacity ${
+                activeTab === "podcast" ? "opacity-100" : "opacity-0"
+              }`}
+              style={{ backgroundColor: "var(--color-primary)" }}
+            />
           </button>
           <button
             onClick={() => setActiveTab("reel")}
-            className={`px-8 py-3 rounded-full font-semibold transition-colors ${
-              activeTab === "reel"
-                ? "bg-[var(--color-primary)] text-white shadow-md"
-                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+            className={`relative pb-4 text-sm font-medium transition-colors ${
+              activeTab === "reel" ? "text-black" : "text-black/40 hover:text-black"
             }`}
           >
             Reel Edits
+            <span
+              className={`absolute left-0 right-0 -bottom-[1px] h-[2px] transition-opacity ${
+                activeTab === "reel" ? "opacity-100" : "opacity-0"
+              }`}
+              style={{ backgroundColor: "var(--color-primary)" }}
+            />
           </button>
         </div>
 
         {activeTab === "podcast" && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {podcastVideos.map((url, i) => (
-              <div key={i} className="aspect-video bg-gray-100 rounded-xl overflow-hidden shadow-sm">
+              <div key={i} className="aspect-video bg-black/[0.03] rounded-2xl overflow-hidden border border-black/[0.08]">
                 <iframe
                   src={url}
                   title="YouTube video player"
@@ -76,7 +85,7 @@ const Portfolio = () => {
         {activeTab === "reel" && (
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {reelVideos.map((url, i) => (
-              <div key={i} className="aspect-[9/16] bg-gray-100 rounded-xl overflow-hidden shadow-sm">
+              <div key={i} className="aspect-[9/16] bg-black/[0.03] rounded-2xl overflow-hidden border border-black/[0.08]">
                 <iframe
                   src={url}
                   className="w-full h-full"

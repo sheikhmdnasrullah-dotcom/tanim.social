@@ -7,26 +7,110 @@
   --color-primary-hover: #e6682e;
   --color-background: #f5f3ef;
   --color-surface: #ffffff;
-  --color-text-main: #000000;
+  --color-text-main: #0a0a0a;
   --color-text-muted: #4a4a4a;
-  --color-border: #e5e7eb;
+  --color-border: #e2ddd3;
+  --nav-height: 4rem;
 
   --background: var(--color-background);
   --foreground: var(--color-text-main);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
-  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
 
+::selection {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply max-w-page mx-auto px-6 md:px-10;
+  }
+  .section {
+    @apply py-20 md:py-28 scroll-mt-16;
+  }
+  .eyebrow {
+    @apply block font-mono text-[11px] tracking-[0.22em] uppercase text-black/40 mb-3;
+  }
+  .h2 {
+    @apply font-syne font-bold text-3xl md:text-[2.75rem] leading-[1.1] tracking-tight text-black;
+  }
+  .body-lg {
+    @apply text-base md:text-lg text-black/60 leading-relaxed;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition-colors duration-200 whitespace-nowrap;
+  }
+  .btn-primary {
+    @apply btn bg-black text-white hover:bg-black/85;
+  }
+  .btn-accent {
+    @apply btn text-white;
+    background-color: var(--color-primary);
+  }
+  .btn-accent:hover {
+    background-color: var(--color-primary-hover);
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-black/70 border border-black/15 hover:border-black/30 hover:text-black;
+  }
+  .link-arrow {
+    @apply inline-flex items-center gap-1.5 text-sm font-medium text-black transition-colors;
+  }
+  .link-arrow:hover {
+    color: var(--color-primary);
+  }
+  .card {
+    @apply bg-white border border-black/[0.08] rounded-2xl;
+  }
+  .essay-content {
+    @apply text-black/70 leading-relaxed;
+  }
+  .essay-content h2 {
+    @apply font-syne font-bold text-2xl text-black mt-10 mb-4;
+  }
+  .essay-content h3 {
+    @apply font-syne font-bold text-xl text-black mt-8 mb-3;
+  }
+  .essay-content p {
+    @apply mb-4;
+  }
+  .essay-content ul,
+  .essay-content ol {
+    @apply pl-5 mb-4 space-y-2;
+  }
+  .essay-content ul {
+    @apply list-disc;
+  }
+  .essay-content ol {
+    @apply list-decimal;
+  }
+  .essay-content strong {
+    @apply text-black font-semibold;
+  }
+  .essay-content a {
+    color: var(--color-primary);
+  }
+  .essay-content hr {
+    @apply my-12 border-black/[0.08];
   }
 }
