@@ -19,7 +19,7 @@ export default function Home() {
 
       <footer className="border-t border-[var(--color-border)] py-10">
         <div className="container-page flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-black/40 text-sm">
+          <p className="text-black/40 text-[11px] font-medium tracking-[0.1em] uppercase">
             &copy; {new Date().getFullYear()} Nasrullah Tanim. All rights reserved.
           </p>
           <div className="flex gap-5">

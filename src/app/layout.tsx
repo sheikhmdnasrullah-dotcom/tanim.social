@@ -1,22 +1,19 @@
 import type { Metadata } from "next";
-import { Inter, Inter_Tight, Syne } from "next/font/google";
+import { Instrument_Serif, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-heading",
   display: "swap",
 });
 
-const interTight = Inter_Tight({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-inter-tight",
-  display: "swap",
-});
-
-const syne = Syne({
-  subsets: ["latin"],
-  variable: "--font-syne",
+  weight: ["400", "500", "600"],
+  variable: "--font-body",
   display: "swap",
 });
 
@@ -31,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${interTight.variable} ${syne.variable}`}>
-      <body className="antialiased font-inter bg-[var(--color-background)] text-[var(--color-text-main)]">
+    <html lang="en" className={`${instrumentSerif.variable} ${plusJakartaSans.variable}`}>
+      <body className="antialiased font-sans bg-[var(--color-background)] text-[var(--color-text-main)]">
         {children}
       </body>
     </html>
