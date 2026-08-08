@@ -15,34 +15,35 @@ const Thoughts = () => {
   };
 
   return (
-    <section id="thoughts" className="py-24">
-      <div className="max-w-4xl mx-auto px-6">
-        
+    <section id="thoughts" className="section border-t border-[var(--color-border)]">
+      <div className="container-page max-w-4xl">
+
         {/* Thoughts List */}
         {!activeArticle && (
           <div>
-            <div className="text-center mb-16">
-              <h2 className="font-inter-tight font-extrabold text-4xl md:text-5xl text-black">Thoughts</h2>
-              <p className="text-gray-600 mt-4 text-lg">Essays on operations, growth, and AI.</p>
+            <div className="max-w-2xl mb-16">
+              <span className="eyebrow">How I Think</span>
+              <h2 className="h2 mb-4">Thoughts</h2>
+              <p className="body-lg">Essays on operations, growth, and AI.</p>
             </div>
-            
-            <div 
-              className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-md transition-all cursor-pointer group"
+
+            <div
+              className="card p-8 hover:border-black/20 transition-colors cursor-pointer group"
               onClick={() => { setActiveArticle("remote-hq"); handleScrollToTop(); }}
             >
-              <div className="flex items-center gap-4 text-sm font-medium text-gray-500 mb-4">
-                <span className="bg-[var(--color-primary)] text-white px-3 py-1 rounded-full text-xs">Essay</span>
+              <div className="flex items-center gap-4 text-sm font-medium text-black/40 mb-4">
+                <span className="font-mono text-[11px] uppercase tracking-wider">Essay</span>
                 <span>March 2025</span>
                 <span>18 min read</span>
               </div>
-              <h3 className="font-inter-tight font-bold text-2xl md:text-3xl text-black mb-3 group-hover:text-[var(--color-primary)] transition-colors">
+              <h3 className="font-syne font-bold text-2xl md:text-3xl text-black mb-3 group-hover:text-[var(--color-primary)] transition-colors">
                 The Remote Headquarters Revolution
               </h3>
-              <p className="text-gray-600 mb-6 line-clamp-2">
+              <p className="text-black/60 mb-6 line-clamp-2">
                 Why AI-Powered Operational Partners Will Replace Traditional Business Models by 2035. The traditional model of building in-house teams is dying, and in its place, a new paradigm is emerging.
               </p>
-              <div className="font-medium text-[var(--color-primary)] flex items-center gap-2">
-                Read article <span>→</span>
+              <div className="link-arrow">
+                Read article <span aria-hidden>&rarr;</span>
               </div>
             </div>
           </div>
@@ -50,29 +51,29 @@ const Thoughts = () => {
 
         {/* Article View */}
         {activeArticle === "remote-hq" && (
-          <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
-            <button 
+          <div className="card p-8 md:p-12">
+            <button
               onClick={() => { setActiveArticle(null); handleScrollToTop(); }}
-              className="mb-10 text-gray-500 hover:text-[var(--color-primary)] font-medium flex items-center gap-2 transition-colors"
+              className="mb-10 link-arrow"
             >
-              ← Back to Thoughts
+              &larr; Back to Thoughts
             </button>
 
-            <div className="mb-12 border-b border-gray-100 pb-10">
-              <div className="flex flex-wrap items-center gap-4 text-sm font-medium text-gray-500 mb-6">
-                <span className="bg-[var(--color-primary)] text-white px-3 py-1 rounded-full text-xs">Essay</span>
+            <div className="mb-12 border-b border-black/[0.08] pb-10">
+              <div className="flex flex-wrap items-center gap-4 text-sm font-medium text-black/40 mb-6">
+                <span className="font-mono text-[11px] uppercase tracking-wider">Essay</span>
                 <span>March 2025</span>
                 <span>18 min read</span>
               </div>
-              <h1 className="font-inter-tight font-extrabold text-4xl md:text-5xl text-black mb-4 leading-tight">
+              <h1 className="font-syne font-extrabold text-3xl md:text-5xl text-black mb-4 leading-tight">
                 The Remote Headquarters Revolution
               </h1>
-              <p className="text-xl text-gray-500 font-inter">
+              <p className="text-lg md:text-xl text-black/50">
                 Why AI-Powered Operational Partners Will Replace Traditional Business Models by 2035
               </p>
             </div>
 
-            <div className="prose prose-lg max-w-none prose-headings:font-inter-tight prose-headings:font-bold prose-headings:text-black prose-p:text-gray-700 prose-a:text-[var(--color-primary)] prose-strong:text-black prose-li:text-gray-700">
+            <div className="essay-content">
               <div className="bg-[var(--color-background)] border-l-4 border-[var(--color-primary)] p-6 rounded-r-xl mb-10 text-gray-800">
                 <div className="text-2xl mb-2">🏢</div>
                 <div><strong>Thesis:</strong> By 2035, most companies will not employ traditional operations teams. Instead, they will subscribe to <strong>Remote Headquarters (Remote HQ)</strong> platforms that combine AI, specialized human expertise, and proprietary technology.</div>
