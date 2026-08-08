@@ -36,7 +36,7 @@ const Thoughts = () => {
                 <span>March 2025</span>
                 <span>18 min read</span>
               </div>
-              <h3 className="font-syne font-bold text-2xl md:text-3xl text-black mb-3 group-hover:text-[var(--color-primary)] transition-colors">
+              <h3 className="font-heading italic font-normal text-3xl md:text-4xl text-black mb-3 group-hover:text-[var(--color-primary)] transition-colors">
                 The Remote Headquarters Revolution
               </h3>
               <p className="text-black/60 mb-6 line-clamp-2">
@@ -65,7 +65,7 @@ const Thoughts = () => {
                 <span>March 2025</span>
                 <span>18 min read</span>
               </div>
-              <h1 className="font-syne font-extrabold text-3xl md:text-5xl text-black mb-4 leading-tight">
+              <h1 className="font-heading italic font-normal text-4xl md:text-6xl text-black mb-4 leading-tight">
                 The Remote Headquarters Revolution
               </h1>
               <p className="text-lg md:text-xl text-black/50">

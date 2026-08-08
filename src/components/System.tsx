@@ -112,7 +112,7 @@ const System = () => {
                   >
                     <span>
                       <span
-                        className={`block font-syne font-bold text-xl md:text-2xl transition-colors ${
+                        className={`block font-sans font-bold text-xl md:text-2xl transition-colors ${
                           isActive ? "text-black" : "text-black/70 group-hover:text-black"
                         }`}
                       >

@@ -57,7 +57,7 @@ const Navbar = () => {
           <a
             href="#home"
             onClick={(e) => handleClick(e, "#home")}
-            className="font-syne font-bold text-base text-black tracking-tight"
+            className="font-sans font-semibold text-base text-black tracking-tight"
           >
             Nasrullah Tanim
           </a>
@@ -122,7 +122,7 @@ const Navbar = () => {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleClick(e, link.href)}
-                className={`py-4 text-2xl font-syne font-semibold border-b border-black/[0.06] transition-colors ${
+                className={`py-4 text-2xl font-sans font-semibold border-b border-black/[0.06] transition-colors ${
                   isActive ? "text-black" : "text-black/40"
                 }`}
               >

@@ -9,16 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        accent: '#ff7433',
-        'accent-hover': '#e55f1f',
+        accent: '#FF6B35',
+        'accent-hover': '#e85a2a',
         bg: '#f5f3ef',
         ink: '#0a0a0a',
         line: '#e2ddd3',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        tight: ['var(--font-inter-tight)', 'system-ui', 'sans-serif'],
-        syne: ['var(--font-syne)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-body)', 'system-ui', 'sans-serif'],
+        heading: ['var(--font-heading)', 'Georgia', 'serif'],
         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       maxWidth: {
