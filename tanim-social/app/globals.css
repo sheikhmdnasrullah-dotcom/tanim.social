@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter+Tight:wght@700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&display=swap');
+
+:root {
+  --bg: #f5f3ef;
+  --surface: rgba(255, 116, 51, 0.04);
+  --surface-hover: rgba(255, 116, 51, 0.08);
+  --border: rgba(0, 0, 0, 0.10);
+  --text-primary: #0a0a0a;
+  --text-secondary: #3d3530;
+  --text-muted: #7c7067;
+  --accent: #ff7433;
+  --accent-hover: #e55f1f;
+  --accent-text: #ffffff;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --input-bg: rgba(0, 0, 0, 0.02);
+  --navbar-bg: rgba(245, 243, 239, 0.92);
+  --shadow: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,0.08);
+  --glow: 0 0 20px rgba(255, 116, 51, 0.12);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Sora', sans-serif;
+  font-weight: 300;
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+  font-size: 16px;
+  letter-spacing: 0.005em;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  letter-spacing: -0.018em;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255, 116, 51, 0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 116, 51, 0.5); }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes blurToSharp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.9); }
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--accent); }
+}
+
+@keyframes statusBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes messageSlideIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes typingDot {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-5px); }
+}
+
+@keyframes slideUp {
+  to { transform: translateY(0); }
+}
+
+@keyframes micPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 116, 51, 0.7); }
+  50% { box-shadow: 0 0 0 10px rgba(255, 116, 51, 0); }
+}
+
+@keyframes quizFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== TYPEWRITER ===== */
+.rotating-text {
+  color: var(--accent);
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid var(--accent);
+}
+
+.rotating-text.visible {
+  opacity: 1;
+  animation: typewriter 2s steps(40) forwards, blink 0.75s step-end infinite;
+}
+
+.rotating-text.fade-out {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* ===== SCROLL REVEAL ===== */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(10px);
+}
+
+.scroll-reveal.revealed {
+  animation: blurToSharp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ===== STAGGER ANIMATIONS ===== */
+.animate-up {
+  animation: fadeUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+.animate-up:nth-child(1) { animation-delay: 0.03s; }
+.animate-up:nth-child(2) { animation-delay: 0.12s; }
+.animate-up:nth-child(3) { animation-delay: 0.08s; }
+.animate-up:nth-child(4) { animation-delay: 0.20s; }
+.animate-up:nth-child(5) { animation-delay: 0.14s; }
+
+/* ===== CHAT MODAL ===== */
+.chat-typing-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: typingDot 1.4s ease-in-out infinite;
+}
+
+.chat-typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.chat-typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+/* ===== REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
